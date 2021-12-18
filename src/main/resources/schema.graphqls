@@ -1,0 +1,53 @@
+type User {
+    id: ID
+    fullname: String
+    email: String
+    password: String
+    username: String
+}
+
+type Video {
+    id: ID
+    title: String
+    titleJp: String
+    poster: String
+    description: String
+    views: Int
+    active: Boolean
+    alternate_title: String
+    country: String
+    season: String
+    year: Int
+    releaseDate: String
+    status: String
+    rating: Int
+    userId: ID
+    duration: Int
+    volume: Int
+    idAnilist: ID
+    imageBanner: String
+    trailer: String
+}
+
+type Category{
+    id
+    name
+}
+
+type Query {
+    user(id: ID!): User
+    allUser: [User]
+    video(id: ID!): Video
+}
+
+type Mutation {
+    createUser(input: createUser): User
+    deleteUser(id: ID): Boolean
+}
+
+input createUser {
+    fullname: String
+    email: String
+    password: String
+    username: String
+}
