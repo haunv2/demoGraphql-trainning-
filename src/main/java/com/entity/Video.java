@@ -1,13 +1,16 @@
 package com.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Entity
 @Table(name = "video", indexes = {
         @Index(name = "idAnilist", columnList = "idAnilist", unique = true)
 })
-public class Video {
+public class Video implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

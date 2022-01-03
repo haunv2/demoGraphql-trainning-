@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 
-@Component
+//@Component
 public class videoQuery implements GraphQLQueryResolver {
 
     static Logger videoQueryLoger = LoggerFactory.getLogger(videoQuery.class);

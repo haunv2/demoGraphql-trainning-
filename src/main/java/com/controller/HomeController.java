@@ -4,7 +4,6 @@ import com.entity.User;
 import com.entity.Video;
 import com.repository.UserRepository;
 import com.repository.VideoRepository;
-import com.service.test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,33 +18,32 @@ public class HomeController {
     UserRepository userRepository;
 
     final
-    test videoRepository;
+    VideoRepository videoRepository;
 
     @Autowired
-    public HomeController(UserRepository userRepository, test videoRepository) {
+    public HomeController(UserRepository userRepository, VideoRepository videoRepository) {
         this.userRepository = userRepository;
         this.videoRepository = videoRepository;
     }
 
     @RequestMapping(value = "getAllUser", method = RequestMethod.GET)
-    public Iterable<User> allUser(){
+    public Iterable<User> allUser() {
         return userRepository.findAll();
     }
 
     @RequestMapping(value = "user/{id}")
-    public User findUser(@PathVariable String id){
+    public User findUser(@PathVariable String id) {
         User u = userRepository.findById(Long.valueOf(id)).get();
-        return u==null?null: u;
+        return u == null ? null : u;
     }
 
     @RequestMapping(value = "getAllVideo", method = RequestMethod.GET)
-    public Iterable<Video> allVideo(){
+    public Iterable<Video> allVideo() {
         return videoRepository.findAll();
     }
 
     @RequestMapping(value = "video/{id}")
-    public Video findVideo(@PathVariable String id)
-    {
+    public Video findVideo(@PathVariable String id) {
         return null;
     }
 }
